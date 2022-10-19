@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> Alert Test </title>
+<script type="text/javascript">
+
+	window.onload = function(){	// window.onload : 윈도우가 메모리에 올라옴
+		// 1. alert
+		// alert('이 사이트는 이사감')	// window. 생략 가능 /  실행하자마자 바로 출력 됨.
+		// location.href = 'http://www.ikosmo.co.kr';
+		// window.location = 'http://www.ikosmo.co.kr';
+		
+		// 2. confirm
+	//	let result = window.confirm('변경 된 주소로 이동할까요?');
+	//	if(result){
+	//	window.location = 'http://www.ikosmo.co.kr';
+	//	}
+		
+		// 3. prompt : 
+		let inputText = prompt('이동하길 원하는 url은?');
+		window.location = inputText;	// location : 원하는 링크로 이동
+	}
+
+</script>
+</head>
+<body>
+이 사이트는 조만간 운영하지 않습니다.
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 리스너 연결 </title>
+	<script type="text/javascript">
+	
+	window.onload = function(){
+		var b = document.getElementById('btn');	// b : 화면에 있는 버튼
+		b.addEventListener('click' , function xxxx(){	/* click이 되었을때 xxxx 함수 호출 이벤트 , 함수를 변수처럼 호출 가능 */
+			alert('확인4')
+		});
+	}	
+	</script>
+ </head>
+ <body>
+	<input type='button' value='눌러'  id='btn' />
+ </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 03_for_z.html </title>
+
+<script type = "text/javascript">
+
+	document.write("<table border='2'>");
+	
+	var a = 1;
+	for(var i = 0 ; i < 5 ; i++){
+		document.write('<tr>');
+		for(var j = 0 ; j < 5 ; j++){
+			document.write('<td>' + a++ + '</td>');
+		}
+		document.write('</tr>');
+	}
+		document.write('</table>');
+		
+		
+	document.write('<hr/>');
+	document.write("<table border='2'>");
+	
+	var b = 0;
+	var c = 0;
+		for(var i = 0 ; i <= 5 ; i++){
+			document.write('<tr>');
+			for(var j = 0 ; j <= 6 ; j++){
+				document.write('<td>' + '('+ i +',' + j + ')' + '</td>');
+			}
+			document.write('</tr>');
+		}
+			document.write('</table>');	
+		
+		
+</script>
+
+
+
+
+</head>
+<body>
+
+</body>
+</html>

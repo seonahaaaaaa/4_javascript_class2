@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+table {
+	border : 2px solid;
+	height : 60;
+	width: 100;
+	background : yellow;
+	}
+
+.first {
+	background : blue;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<meta charset="UTF-8">
+  <title> 복습_02 </title>
+  <link type = 'text/css' rel = 'stylesheet' href = '/WebUI/4_javascript_class/03_dom/style.html'>
+
+
+  <script type="text/javascript">
+  window.onload = function(){
+	 // 2. 스타일시트 파일을 만들어서 연결
+	   //  (1) table에 테두리(border) 지정 
+	   //  (2) 각 셀에  너비는 100  높이는60  지정
+	   //  (3) 각 셀에 색상을 노란계열로 지정
+	   //  (4) 첫 번째 열의 셀에  first 라는 클래스명을 부여하고 
+	   //    그 클래스명으로 찾아서 배경색을 파랑색 계열로 지정
+	   
+	  let first = document.getElementsByClassName('first');
+	  first[0].style.backgroundColor = 'blue';
+
+	}
+</script>
+ </head>
+<body>
+
+<!--  (1) 3행 2열의 테이블 만들기 --> 
+
+<h2> 좋아하는 음식 </h2>
+<form name="foodtbl" >
+	<table id = 'tbl'>
+	<tr class = 'first'>
+		<td align="center"><input type="text" name="food1" id="food1"></td>
+		<td align="center"><input type="text" name="food2" id="food2"></td>		
+	</tr>
+	<tr>
+		<td align="center"><input type="text" name="food3" id="food3"></td>
+		<td align="center"><input type="text" name="food4" id="food4"></td>		
+	</tr>
+	<tr>
+		<td align="center"><input type="text" name="food5" id="food5"></td>
+		<td align="center"><input type="text" name="food6" id="food6"></td>		
+	</tr>
+	</table>
+
+</form>
+</body>
+</html>

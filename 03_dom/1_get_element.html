@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM에서 노드 검색 방법</title>
+<script type="text/javascript">
+
+  window.onload = function () {
+	  
+	  document.getElementById('btn').onclick = function(){
+			
+	// 1. ID값으로 노드 얻어오기
+	//let name = document.getElementById('name');	// 'name' 이라는 화면에 출력되는 값을 let name 으로 관리함.
+	//let result = document.getElementById('result');
+	//result.innerHTML = '안녕' 1_get_element.html+ name.value + "님!!";	// name.value : name 텍스트 필드의 입력 된 값
+	// innerHTML : 태그 사이에 입력값
+	
+	// 2. 클래스명으로 노드 얻어오기
+	//let cname = document.getElementsByClassName('cname');
+	//let result = document.getElementById('result');
+	//result.innerHTML = '안녕' + cname[0].value + "님!!";	// class 로 정의한 cname은 값이 하나밖에 없어도 길이가 1개인 배열로 지정되기 떄문에 cname[0] 으로 몇번 방인지 써줘야함
+	
+	// 3. 태그명으로 노드 얻어오기 (사용 빈도수 낮음)
+	//let input = document.getElementsByTagName('input');
+//	for(let i = 0; i < inputList.length; i++){
+//		if(inputList[i].type == 'text' && inputList[i].value==''){	// input 된 값이 text 타입이고 input 된 값이 공백이 아닐 경우 출력 후 반복문 마침.
+//			alert('각 항목을 입력하세요');
+//			break;
+			// return; 가능 : 반복문을 아예 종료해버림
+
+	
+		// 4. 현재위치에서 상대적인 관계로 노드 얻어오기
+		let me = document.getElementById('label');
+			let childs = me.childNodes;	// label의 자식들을 불러와서 childs 변수에 배열로 저장함.
+			alert(childs.length);
+			for(let i = 0; i < childs.length ; i++){
+				if(childs[i].nodeType === 1 && childs[i].value == ''){	// childs[i]의 값이 요소 노드(1) 이고 i번째 값이 공백이면  
+					alert(childs[i].name + '은 필수 입력');
+					return;
+				}
+			}
+		
+		/* nodeType 프로퍼티의 반환값
+			1 -	요소 노드
+			2 - 속성 노드
+			3 - 텍스트 노드
+			4 - CDATA 섹션
+			5 - 실제참조 노드
+			6 - 셀제선언 노드
+			7 - 처리명령 노드
+			8 - 코멘트 노드
+			9 - 문서 노드
+			10 - 문서형선언 노드
+			11 - 문서의 단편 (fragment)
+			12 - 기법선언 노드
+		*/
+		
+		// 5. DOM 구조는 아니지만 폼의 요소를 찾는 방법
+	//	let n = document.querySelector('.cname');	// id : #name
+	//	let r = document.querySelector('#result');
+	//	r.innerHTML = '안녕하세요~' + n.value + '님';
+		}
+	}		
+		
+
+  </script>
+</head>
+
+<body>
+	<!-- 1 -->
+	<form name="fm">
+		<div id='label'>	<!-- label.length : 6개(이름,input,학과,input,학교,input) -->
+		 이름 : <input 	type="text" id="name" 	class="cname" name="name" size="15" />
+		 학과 : <input	type="text" id="dept" name="dept" size="15" /> 
+		 학교 : <input 	type="text" id="univ" name="univ" size="15" />
+		 </div>
+		<input id="btn" type="button" value="버튼" />
+		<div id="result"></div>
+	</form>
+</body>
+</html>

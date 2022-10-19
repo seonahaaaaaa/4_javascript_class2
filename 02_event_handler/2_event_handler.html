@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 핸들러 연결 </title>
+ 	<script type="text/javascript">
+ 	
+ 	window.onload = function(){					// window.onload : 실행 순서를 변경해줌
+ 	
+	var btn = document.getElementById('btn');   // 문서(document) 에서 btn 아이디를 찾아와서 value와 type 을 얻어와 btn 변수에 담음
+	btn.onclick = function(){					// onclick 이벤트 : 사용자가 요소를 클릭했을때 발생하는 이벤트
+							alert('버튼 클릭')
+							};
+ 	}
+ 	
+</script>
+  </head>
+ <body>
+	<input type='button' value='눌러'  id='btn' />	<!-- 화면에 출력되는 버튼 --> 
+ </body>
+ 
+
+
+
+</html>
