@@ -31,8 +31,55 @@ window.onload = function(){
 	
 	// 년 구하기
 	for( var j=year-5;  j<= year+5; j++){
-		frm.y.add( new Option(j, j));				// 만들고 브라우저 F12에서 Elements로 확인 : Option(j)와 Option(j,j) 차이
+		frm.y.add( new Option(j,j));			
+		
+		// 만들고 브라우저 F12에서 Elements로 확인 : Option(j)와 Option(j,j) 차이
+	}	
+	for(let j=1; j<=12; j++){
+		frm.m.add(new Option(j,j));
 	}
+	
+	for(let j=1; j<=lastDays[month]; j++){
+		frm.d.add(new Option(j,j));
+	}
+		
+	frm.y.value = year;
+	frm.m.value = month+1;
+	frm.d.value = date;
+	
+	frm.y.onchange = a;
+	frm.m.onchange = a;
+	frm.d.onchange = a;
+	a();
+	
+	function a(){
+		//1) 화면에서 각각의 년, 월, 일 값을 얻어오기
+		let year = document.frm.y.value;
+		let month = document.frm.m.value;
+		let date = document.frm.d.value;
+	
+	//2) Date() 객체에 각각의 년, 월, 일 값을 지정하기
+		let today = new Date();
+		let fullYear = today.setFullYear(year,month-1,date);
+		if(year=='2024' && month=='2'){
+			lastDays[1]=29;
+		}
+	
+	//3) 해당 날짜의 요일을 구하여 화면 출력
+		frm.w.value = weeks[today.getDay()];	
+		
+		frm.d.options.length=0;		// d 의 데이터 전부 제거
+		
+		for(let j=1; j<=lastDays[month-1]; j++){
+			frm.d.add(new Option(j,j));
+		}
+		
+		// 윤년처리 lastDay[1]=29  2024년, 2028년
+		
+		
+		
+	}
+	
 
 }
 </script>

@@ -4,6 +4,29 @@
 <meta charset="UTF-8">
 <title> 이벤트 예제 2 </title>
 <script type="text/javascript">
+
+window.onload = function(){
+	let mango = frm.mango;
+	let avocado = frm.avocado;
+	
+	mango.onchange = calc;	// 함수 호출이 아닌 연결만 시켜줘야 하기 떄문에 괄호 생략
+	avocado.onchange = calc;
+	
+	function calc(){
+		let mCal = mango.value * 4000;
+		let aCal = avocado.value * 5000;
+	let total = document.getElementsByName('total');
+	total[0].value = mCal+aCal;
+	
+	//frm.total.value = mango.value * 4000 + avocado.value * 5000;
+	
+	}
+		
+	
+	
+	
+	
+}
 </script>
 	
 </head>

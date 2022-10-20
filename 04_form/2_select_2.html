@@ -5,13 +5,74 @@
 <title> 폼 예제 2</title>
 </head>
 <script type="text/javascript">
+
+window.onload = function(){
+	
+	let id = document.getElementById('up');
+	let down = document.getElementById('down');
+	
+	up.onclick = function(){
+	//	alert(frm.play.text);
+		
+		let idx = frm.play.selectedIndex;
+		// alert(idx);     => selectedIndex : 선택한 옵션이 몇번째 순서인지 나타냄 : 몇번째인지 idx 에 저장
+		let optSel = frm.play.options;     // options : 원하는 영역에 옵션들 가져오기
+		
+		if(idx>0){
+		let temp = optSel[idx].text;		// 태그와 태그 사이의 값은 : text
+											// 옵션들의 순서에 따른 지정 된 값을 temp 에 대입
+		optSel[idx].text = optSel[idx-1].text;
+		optSel[idx-1].text = temp;
+		optSel[idx-1].selected = true;
+		
+		} else if (idx==0){
+			let temp = optSel[idx].text;
+			optSel[idx].text = optSel[idx+5].text;
+			optSel[idx+5].text = temp;
+			optSel[idx+5].selected = true;
+		}
+	}
+	
+	down.onclick = function(){
+		let idx = frm.play.selectedIndex;
+		let optSel = frm.play.options;
+		
+		if(idx>0){
+			let temp = optSel[idx].text;		// 태그와 태그 사이의 값은 : text
+			optSel[idx].text = optSel[idx+1].text;	// 
+			optSel[idx+1].text = temp;
+			optSel[idx+1].selected = true;
+		}else if(idx==5){
+			let temp = optSel[idx].text;
+			optSel[idx].text = optSel[idx-5].text;
+			optSel[idx-5].text = temp;  // 
+			optSel[idx-5].selected = true;
+		}
+		
+		
+	}
+	
+	
+
+		
+		
+		
+		
+	
+	
+	
+	
+}
+
+
+
 </script>
 <body>
 
 내가 제일 좋아하는 놀이 순서대로 한다면 <br>
 
 <form name="frm">
-<select name="play" size="8">
+<select name="play" size="6">
 	<option selected> 숨쉬기 </option>
 	<option> 밥먹기 </option>
 	<option> 그냥있기 </option>

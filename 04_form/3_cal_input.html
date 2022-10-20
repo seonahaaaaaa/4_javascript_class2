@@ -4,7 +4,59 @@
 <meta charset="UTF-8">
 <title> 폼 예제 3 </title>
 <script type="text/javascript">
-
+	// 오늘 날짜 구하기
+	window.onload = function(){
+	let today = new Date();
+	let year = today.getFullYear();
+	let month = today.getMonth();
+	let date = today.getDate();
+	
+	frm1.y.value = year;
+	frm1.m.value = month+1;
+	frm1.d.value = date;
+	
+	let btn = document.getElementById('btn');
+	btn.onclick = function(){
+		//1) 화면에서 각각의 년, 월, 일 값을 얻어오기
+			let year = document.frm1.y.value;
+			let month = document.frm1.m.value;
+			let date = document.frm1.d.value;
+		
+		//2) Date() 객체에 각각의 년, 월, 일 값을 지정하기
+			let today = new Date();
+			let fullYear = today.setFullYear(year,month-1,date);
+			alert(fullYear);
+		
+		//3) 해당 날짜의 요일을 구하여 화면 출력
+			//let day = ['일','월','화','수','목','금','토'];
+			// frm1.w.value = day[today.getDay()];	
+			let num = '일';
+			switch(today.getDay()){
+			case 0 : num = '일';
+					break;
+			case 1 : num = '월';
+					break;
+			case 2 : num = '화';
+					break;
+			case 3 : num = '수';
+					break;
+			case 4 : num = '목';
+					break;
+			case 5 : num = '금';
+					break;
+			case 6 : num = '토';
+					break;
+			}frm1.w.value = num;
+			
+		
+	}
+	
+	
+	
+	}
+	
+	
+	
 </script>
 </head>
 <body>

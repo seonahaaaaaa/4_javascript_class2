@@ -11,7 +11,11 @@
 			 
 			 var sDate = new Date(s);
 			 var eDate = new Date(e);
-
+			 
+			 var diff = eDate - sDate;
+			 
+			 var diff2 = math.ceil(diff / (24*60*60*1000));
+			 alert(diff2);
 	
 		}
 	}

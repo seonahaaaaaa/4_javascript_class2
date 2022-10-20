@@ -19,8 +19,8 @@
 				let inner = document.getElementById('inner');
 				inner.addEventListener('click',function(evt){	// 
 					alert('이너 이벤트')		// id : inner
-					evt.stopPropagation();
-					evt.preventDefault();
+					evt.stopPropagation();	// 부모 태그로의 이벤트 전파를 중단하라는 의미
+					evt.preventDefault();	// 브라우저의 고유 동작을 막아줌 (ex) 웹페이지 이동) 
 				});
 				
 				let outer = document.getElementById('outer');
